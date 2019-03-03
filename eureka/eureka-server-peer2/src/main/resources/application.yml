@@ -1,0 +1,13 @@
+server:
+  port: 8082
+
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8081/eureka/,http://peer3:8083/eureka/
+
+spring:
+  application:
+    name: eurka-server
