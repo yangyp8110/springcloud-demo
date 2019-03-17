@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by mr.yang on 2019/3/3.
+ * 自定义Ribbon配置
  */
 @Configuration
 public class MyRibbonConfig {

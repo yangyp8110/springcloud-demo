@@ -1,0 +1,13 @@
+server:
+  port: 9100
+
+eureka:
+  instance:
+    hostname: hystrix-service
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8081/eureka/
+
+spring:
+  application:
+    name: hystrix-service
