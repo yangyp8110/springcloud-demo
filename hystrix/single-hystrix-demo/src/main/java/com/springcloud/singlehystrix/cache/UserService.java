@@ -1,6 +1,7 @@
 package com.springcloud.singlehystrix.cache;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheRemove;
 import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheResult;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,12 @@ public class UserService {
     public User getUserByUserId(Integer userId) {
         System.out.println("========== UserService get user run ==========");
         return new User(userId, "小明", System.currentTimeMillis());
+    }
+
+    @HystrixCommand(fallbackMethod = "getFallback")
+    @CacheRemove(commandKey = "getUserByUserId", cacheKeyMethod = "getCacheKey")
+    public void update(Integer userId) {
+        //TODO:update user
     }
 
     public String getCacheKey(Integer userId) {
