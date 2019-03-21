@@ -1,0 +1,13 @@
+server:
+  port: 9200
+
+eureka:
+  instance:
+    hostname: feign-client
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8081/eureka/
+
+spring:
+  application:
+    name: feign-client

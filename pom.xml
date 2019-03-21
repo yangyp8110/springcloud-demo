@@ -17,6 +17,9 @@
     <module>ribbon/ribbon-service</module>
     <module>hystrix/hystrix-service</module>
     <module>hystrix/single-hystrix-demo</module>
+    <module>feign/feign-service</module>
+    <module>feign/feign-client</module>
+    <module>feign/feign-service-api</module>
   </modules>
 
   <parent>
@@ -37,6 +40,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.22</version>
     </dependency>
   </dependencies>
 

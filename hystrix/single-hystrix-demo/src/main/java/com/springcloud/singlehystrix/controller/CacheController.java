@@ -22,8 +22,6 @@ public class CacheController {
 
     @GetMapping("/getUserCommandByUserId/{userId}")
     public String getUserCommand(@PathVariable Integer userId) {
-        HystrixRequestContext.initializeContext();
-
         System.out.println(new UserCommand(userId).execute().toString());
         System.out.println(new UserCommand(userId).execute().toString());
         System.out.println(new UserCommand(userId).execute().toString());
